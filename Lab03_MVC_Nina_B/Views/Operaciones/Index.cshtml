@@ -1,0 +1,39 @@
+﻿@model Lab03_MVC_Nina_B.Models.ClsOperaciones
+@{
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <center>
+            <h1>Operaciones Aritméticas</h1>
+            <br /><br />
+            @using (Html.BeginForm("CalcularOperacion", "Operaciones", FormMethod.Post))
+            {
+                @Html.LabelFor(model => model.valor1, "Valor 1: ")
+                @Html.EditorFor(model => model.valor1)
+                <br />
+                @Html.LabelFor(model => model.valor2, "Valor 2: ")
+                @Html.EditorFor(model => model.valor2)
+                <br />
+                @Html.LabelFor(model => model.tipo, "Tipo: ")
+                @Html.DropDownListFor(model => model.tipo, new SelectList(new List<SelectListItem>
+                {
+                    new SelectListItem { Value = "S", Text = "Suma" },
+                    new SelectListItem { Value = "R", Text = "Resta" },
+                    new SelectListItem { Value = "M", Text = "Multiplicación" },
+                    new SelectListItem { Value = "D", Text = "División" }
+                }, "Value", "Text"))
+                <br />
+                <input type="submit" value="Calcular" />
+            }
+        </center>
+    </div>
+</body>
+</html>

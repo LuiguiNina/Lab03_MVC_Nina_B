@@ -1,0 +1,29 @@
+﻿@model  Lab03_MVC_Nina_B.Models.ClsOperaciones
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalcularOperacion</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <h1>Operaciones Aritméticas</h1>
+            <br /><br />
+            <label> Numero 1: </label>
+            @Model.valor1 <br />
+            <label>Numero 2: </label>
+            @Model.valor2 <br />
+            <label>Operación: </label>
+            @Model.tipo <br />
+            <label>Resultado: </label>
+            @Model.resultado
+        </center>
+    </div>
+</body>
+</html>

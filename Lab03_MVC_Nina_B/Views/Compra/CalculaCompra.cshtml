@@ -1,0 +1,43 @@
+﻿@model Lab03_MVC_Nina_B.Models.ClsVentaAleatoria
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalculaCompra</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <h1>Venta Aleatoria</h1>
+            <br />
+            @if (Model.random >= 300 && Model.random <= 500)
+            {
+                Model.total = Model.monto - (Model.monto * 0.2);
+                Model.descuento = (Model.monto * 0.2);
+            }
+            else if (Model.random >= 100 && Model.random <= 299)
+            {
+                Model.total = Model.monto - (Model.monto * 0.1);
+                Model.descuento = (Model.monto * 0.1);
+            }
+            else
+            {
+                Model.total = Model.monto;
+                Model.descuento = 0;
+            }
+            <br />
+            <div>
+                <label>Valor Aleatorio: </label>@Model.random<br />
+                <label>Monto de compra: </label>@Model.monto<br />
+                <label>Descuento: </label>@Model.descuento<br />
+                <label>Total: </label>@Model.total<br />
+            </div>
+        </center>
+    </div>
+</body>
+</html>

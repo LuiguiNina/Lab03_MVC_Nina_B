@@ -1,0 +1,29 @@
+﻿@model Lab03_MVC_Nina_B.Models.ClsVentaAleatoria
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <h1> Venta Aleatoria</h1>
+            <br />
+            @using (Html.BeginForm("CalculaCompra", "Compra", FormMethod.Post)) 
+            { 
+                <p>
+                    @Html.Label("Ingrese Mondo de Compra: ")
+                    @Html.EditorFor(model => model.monto)
+                </p>
+                <input type="submit" value="Calcular"/>
+            }
+        </center>
+    </div>
+</body>
+</html>

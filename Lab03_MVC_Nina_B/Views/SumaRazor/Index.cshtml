@@ -1,0 +1,35 @@
+﻿@model Lab03_MVC_Nina_B.Models.ClsSuma
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <h1>Suma de 2 Numeros</h1>
+            <br />
+            @using (Html.BeginForm("CalcularSuma", "SumaRazor", FormMethod.Post))
+            {
+                @Html.Label("Valor 1: ")
+                @Html.EditorFor(model => model.valor1)
+                <br />
+
+                @Html.Label("valor 2: ")
+                @Html.EditorFor(model => model.valor2)
+
+                <br />
+                <input type="submit" value="Calcular" />
+                <br />
+            }
+            <br />
+        </center>
+    </div>
+</body>
+</html>
